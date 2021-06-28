@@ -3,9 +3,12 @@ data = {
     "gender":"男性",
     "age":46
 }
+data[:address] = "東京"
+
 puts data[:name]
 puts data [:gender]
 puts data[:age]
+puts data[:address]
 
 # data = ["大泉","男性",46]
 
