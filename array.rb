@@ -8,8 +8,15 @@
 #     print(d+1)
 # end
 
-data = [1,2,3]
+# data = [1,2,3]
 
-puts data[0]
+# puts data[0]
 
-puts data[-1]
+# puts data[-1]
+
+# numlist = ["one","two","three"]
+# puts numlist[1]
+
+stringlist = []
+stringlist.append("samurai")
+puts stringlist
