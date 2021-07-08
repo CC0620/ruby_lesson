@@ -1,8 +1,33 @@
+# class Hoge 
+#     def initialize
+#         @name = "大泉"
+#         @age = 46
+#     end
+#     def setName(name)
+#         @name = name
+#     end
+#     def setAge(age)
+#         @age = age
+#     end
+#     def getName
+#         @name
+#     end
+#     def getAge
+#         @age
+#     end
+# end
+
+# hoge = Hoge.new()
+# hoge.setName("藤村")
+# hoge.setAge(54)
+
+# puts hoge.getName
+# puts hoge.getAge
+
 class Hoge 
     def initialize
         @name = "大泉"
-        @age = 46
-    end
+    end 
     def setName(name)
         @name = name
     end
@@ -69,3 +94,23 @@ puts hoge.getAge
 
 # puts Hoge.getStr
 # puts Hoge.getNum
+
+class Hoge 
+    def initialize
+        @name = "大泉"
+    end
+    def setName(name)
+        @name = name
+    end
+    def getName
+        @name
+    end
+end
+
+hoge = Hoge.new()
+hoge.setName("大泉")
+
+hoge2 = Hoge.new()
+hoge2.setName("藤村")
+puts hoge.getName
+puts hoge2.getName
