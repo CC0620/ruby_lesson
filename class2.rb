@@ -24,30 +24,12 @@
 # puts hoge.getName
 # puts hoge.getAge
 
-class Hoge 
-    def initialize
-        @name = "大泉"
-    end 
-    def setName(name)
-        @name = name
-    end
-    def setAge(age)
-        @age = age
-    end
-    def getName
-        @name
-    end
-    def getAge
-        @age
-    end
-end
+# hoge = Hoge.new()
+# hoge.setName("藤村")
+# hoge.setAge(54)
 
-hoge = Hoge.new()
-hoge.setName("藤村")
-hoge.setAge(54)
-
-puts hoge.getName
-puts hoge.getAge
+# puts hoge.getName
+# puts hoge.getAge
 
 # class Hoge
 #     @@class_call_count = 0
@@ -95,22 +77,50 @@ puts hoge.getAge
 # puts Hoge.getStr
 # puts Hoge.getNum
 
-class Hoge 
+# class Hoge 
+#     def initialize
+#         @name = "大泉"
+#     end
+#     def setName(name)
+#         @name = name
+#     end
+#     def getName
+#         @name
+#     end
+# end
+
+# hoge = Hoge.new()
+# hoge.setName("大泉")
+
+# hoge2 = Hoge.new()
+# hoge2.setName("藤村")
+# puts hoge.getName
+# puts hoge2.getName
+
+
+class Human
     def initialize
-        @name = "大泉"
+        @name = nil
+        @address = nil
+    end
+    def show()
+        puts @name
+        puts @address
     end
     def setName(name)
         @name = name
     end
-    def getName
-        @name
+    def setAddress(address)
+        @address = address
     end
 end
 
-hoge = Hoge.new()
-hoge.setName("大泉")
+class Actor < Human
+end
 
-hoge2 = Hoge.new()
-hoge2.setName("藤村")
-puts hoge.getName
-puts hoge2.getName
+actor = Actor.new()
+
+actor.setName("大泉")
+actor.setAddress("北海道")
+
+actor.show()
