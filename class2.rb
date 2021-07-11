@@ -98,29 +98,38 @@
 # puts hoge2.getName
 
 
-class Human
-    def initialize
-        @name = nil
-        @address = nil
-    end
-    def show()
-        puts @name
-        puts @address
-    end
-    def setName(name)
-        @name = name
-    end
-    def setAddress(address)
-        @address = address
+# class Human
+#     def initialize
+#         @name = nil
+#         @address = nil
+#     end
+#     def show()
+#         puts @name
+#         puts @address
+#     end
+#     def setName(name)
+#         @name = name
+#     end
+#     def setAddress(address)
+#         @address = address
+#     end
+# end
+
+# class Actor < Human
+# end
+
+# actor = Actor.new()
+
+# actor.setName("大泉")
+# actor.setAddress("北海道")
+
+# actor.show()
+
+class Hoge
+    def hello
+        puts "Hello Ruby!"
     end
 end
 
-class Actor < Human
-end
-
-actor = Actor.new()
-
-actor.setName("大泉")
-actor.setAddress("北海道")
-
-actor.show()
+hoge = Hoge.new()
+hoge.hello()
