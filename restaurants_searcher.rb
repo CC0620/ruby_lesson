@@ -1,16 +1,18 @@
 require 'net/http'
 require 'json'
+require "csv"
 
 
 KEYID = "cac9d3a5cbaba0d8"
 COUNT = 100
 PREF = "Z011"
-FREEWORD = "渋谷駅"
+FREEWORD = "新宿駅"
 FORMAT = "json"
 PARAMS = {"key": KEYID, "count":COUNT, "large_area":PREF, "keyword":FREEWORD, "format":FORMAT}
 
 def write_data_to_csv(params)
-    restaurants = []
+
+    restaurants = [["名称","営業日","住所","アクセス"]]
     uri = URI.parse("http://webservice.recruit.co.jp/hotpepper/gourmet/v1/")
     uri.query = URI.encode_www_form(PARAMS)  
     json_res = Net::HTTP.get uri
@@ -21,13 +23,15 @@ def write_data_to_csv(params)
         puts "エラーが発生しました！"
     end
     for restaurant in response["results"]["shop"] do
-        rest_name = restaurant["name"]
-        restaurants.append(rest_name)
+        rest_info = [restaurant["name"],restaurant["open"],restaurant["address"],restaurant["access"]]
+        puts rest_info
+        restaurants.append(rest_info)
     end
     
-    File.open("restaurants_list.csv", "w") do |file|
-        file << restaurants
-
+    CSV.open("restaurants_list.csv", "w") do |csv|
+        restaurants.each do |rest_info|
+        csv << rest_info
+        end
     end
     return puts restaurants
 end
